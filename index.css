@@ -1,3 +1,5 @@
+@import url(https://db.onlinewebfonts.com/c/d05c19ccecf7003d248c60ffd6b5e8f7?family=Binance+PLEX);
+
 :root {
   @media screen and (max-width: 500px) {
     font-size: 14px;
@@ -15,7 +17,7 @@
 body {
   background-color: #222336;
   color: #fff;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Binance Plex, Arial, sans-serif !important;
 }
 
 .flex-row {
@@ -54,8 +56,9 @@ body {
 
 .header {
   padding: 1rem;
+  text-align: center;
   .tabs {
-    display: flex;
+    display: inline-flex; 
     justify-content: space-between;
     align-items: center;
     gap: 0.125rem;
@@ -63,6 +66,7 @@ body {
     background-color: #2a2b3d;
     border-radius: 0.5rem;
     padding: 0.125rem;
+    width: 50%;
 
     margin-bottom: 1rem;
 
@@ -170,7 +174,9 @@ body {
 .main {
   overflow-y: auto;
   flex-grow: 1;
-  padding: 1rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
 
   scrollbar-width: 0;
   -ms-overflow-style: none;
@@ -187,8 +193,8 @@ body {
       border: 0;
       outline: 0;
       border-radius: 0.5rem;
-      padding: 0.75rem 1.25rem;
-      height: 2.5rem;
+      padding: 0.5rem 1.25rem;
+      height: 2rem;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -197,12 +203,13 @@ body {
 
       background-color: transparent;
       cursor: pointer;
-      color: #fff;
+      color: #abaaaa;
       opacity: 0.8;
 
       &[aria-selected='true'] {
         box-shadow: rgba(0, 0, 0, 0) 0px 0px 0px 0px;
         background-color: #374151;
+        color: #d6d6d6;
         opacity: 1;
       }
     }
@@ -217,7 +224,9 @@ body {
 
     .title {
       font-size: 1.25rem;
-      font-weight: 500;
+      font-weight: 400;
+      color: #abaaaa;
+      /* border-bottom: #abaaaa 1px dashed; */
     }
 
     .icons {
@@ -225,6 +234,10 @@ body {
         width: 1.5rem;
         height: 1.5rem;
         flex-shrink: 0;
+      }
+      .icon-image {
+        width: 24px;
+        color: #000;
       }
     }
   }
@@ -325,6 +338,12 @@ body {
         outline: 0;
         border-radius: 0.5rem;
         font-size: 1rem;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      .button.active {
+        background-color: #fcd535; /* Active button color */
+        color: black; /* Change text color for better contrast */
       }
     }
   }
@@ -332,6 +351,7 @@ body {
   /* Toggle */
   .toggle-container {
     margin-top: 1rem;
+    margin-bottom: 1.5rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -346,12 +366,12 @@ body {
     }
 
     .toggle-switch {
-      --_width: 100px;
+      --_width: 60px;
 
       position: relative;
       width: var(--_width);
       height: 24px;
-      background-color: #ffc107;
+      background-color: #fcd535;
       border-radius: 0.25rem;
       cursor: pointer;
       transition: background-color 0.3s;
@@ -383,7 +403,11 @@ body {
     display: flex;
     align-items: center;
     gap: 1rem;
-    margin-top: 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background-color: #222336; /* Solid background to prevent transparency while scrolling */
+    border-bottom: 1px solid #374151; /* Optional: you can add a border to separate it visually */
 
     .tab-item {
       --_underline-color: transparent;
@@ -501,6 +525,10 @@ body {
       .grid-3 .cell-item:nth-child(3n) {
         align-items: end;
         text-align: end;
+      }
+
+      .icon-image {
+        width: 24px;
       }
     }
   }
