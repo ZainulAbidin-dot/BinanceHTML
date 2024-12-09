@@ -79,6 +79,7 @@ body {
 
       &[aria-selected='true'] {
         color: #fff;
+        background-color: #222336;
       }
     }
   }
