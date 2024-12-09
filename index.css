@@ -125,6 +125,11 @@ body {
 }
 
 .footer {
+  
+  .icon-image {
+    width: 30px;
+  }
+
   .footer-content {
     display: flex;
     justify-content: space-between;
