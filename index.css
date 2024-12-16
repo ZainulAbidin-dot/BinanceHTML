@@ -15,7 +15,7 @@
 }
 
 body {
-  background-color: #222336;
+  background-color: #191a1f;
   color: #fff;
   font-family: Binance Plex, Arial, sans-serif !important;
   font-weight: bolder;
@@ -40,6 +40,37 @@ body {
 
 .red {
   color: #ff4d4f;
+}
+
+.dotted {
+  border-bottom: #374151 dotted 1px;
+}
+
+.currency-select-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.currency-select {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  -webkit-appearance: none; /* Hide native dropdown arrow */
+  -moz-appearance: none;
+  appearance: none;
+  background: none;
+  margin-right: -10px;
+}
+
+
+/* Position the custom dropdown icon */
+.dropdown-icon {
+  size: 20px; /* Adjust to your icon size */
+  height: 16px; /* Adjust to your icon size */
 }
 
 .app {
@@ -84,7 +115,7 @@ body {
 
       &[aria-selected='true'] {
         color: #fff;
-        background-color: #222336;
+        background-color: #191a1f;
       }
     }
   }
@@ -117,6 +148,8 @@ body {
       cursor: pointer;
       border: 0;
       outline: 0;
+      font-weight: bold;
+      font-size: 14px;
 
       &[aria-selected='true'] {
         opacity: 1;
@@ -164,7 +197,7 @@ body {
 
       &[aria-selected='true'] {
         color: #fff;
-        background-color: #222336;
+        background-color: #191a1f;
 
         svg.icon {
           fill: #fff;
@@ -229,8 +262,9 @@ body {
     padding: 0.5rem 0;
 
     .title {
-      font-size: 1rem;
+      font-size: 1.25rem;
       font-weight: 400;
+      margin-right: 0rem;
       color: #abaaaa;
       /* border-bottom: #abaaaa 1px dashed; */
     }
@@ -242,7 +276,7 @@ body {
         flex-shrink: 0;
       }
       .icon-image {
-        width: 24px;
+        width:17px;
         color: #000;
       }
     }
@@ -253,13 +287,18 @@ body {
   .balance-wrapper {
     margin-top: 1rem;
 
+    .arrow-icon {
+      width: 0.75rem;
+      size: 17px;
+    }
+
     .current-balance-wrapper {
       display: flex;
-      align-items: center;
-      gap: 0.75rem;
+      align-items: baseline;
+      gap: 3px;
 
       .current-balance {
-        font-size: 2rem;
+        font-size: 2.25rem;
         line-height: 1;
         font-weight: 700;
       }
@@ -320,7 +359,7 @@ body {
           font-size: 12px;
           font-weight: 500;
         }
-
+  
         .wallet-balance {
           font-size: 1rem;
           color: #fff;
@@ -349,11 +388,10 @@ body {
         cursor: pointer;
         transition: background-color 250ms ease-in-out, color 250ms ease-in-out;
 
-        &:hover,
-        &:focus-visible {
-          background-color: #ffc107;
-          color: #000;
-        }
+      }
+      .active-btn{
+        background-color: #ffc107;
+        color: #000;
       }
     }
   }
@@ -416,9 +454,15 @@ body {
     position: sticky;
     top: 0;
     z-index: 10;
-    background-color: #222336; /* Solid background to prevent transparency while scrolling */
+    background-color: #191a1f; /* Solid background to prevent transparency while scrolling */
     border-bottom: 1px solid #374151; /* Optional: you can add a border to separate it visually */
 
+
+    .tab-position {
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+    
     .tab-item {
       --_underline-color: transparent;
       border: 0;
@@ -484,7 +528,7 @@ body {
         .type,
         .leverage {
           background-color: #434358;
-          border-radius: 0.125rem;
+          /* border-radius: 0.125rem; */
           padding: 0.25rem 0.5rem;
           font-size: 12px;
           opacity: 0.9;
