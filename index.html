@@ -317,8 +317,8 @@
             <img src="./images/Futures.png" class="footer-icon home-icon" alt="" srcset="">
             <span>Futures</span>
           </button>
-          <button class="tab-item" aria-selected="false">
-            <img src="./images/wallet.png" class="footer-icon icon-market" alt="" srcset="">
+          <button class="tab-item" aria-selected="false" onclick="toggleImage(this)">
+            <img src="./images/wallet.png" class="footer-icon icon-market change-img" alt="" srcset="">
             <span>Wallet</span>
           </button>
         </div>
@@ -327,6 +327,19 @@
   </body>
 
   <script>
+    function toggleImage(button) {
+      const img = button.querySelector(".change-img");
+
+      // Toggle between two image sources
+      const activeSrc = "./images/wallet2.png";
+      const defaultSrc = "./images/wallet.png";
+      
+      const isSelected = button.getAttribute("aria-selected") === "true";
+
+      // Toggle aria-selected and image source
+      button.setAttribute("aria-selected", isSelected ? "false" : "true");
+      img.src = isSelected ? defaultSrc : activeSrc;
+    }
     const buttons = document.querySelectorAll('.buttons .button');
 
     buttons.forEach((button) => {
